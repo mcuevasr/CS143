@@ -16,7 +16,7 @@ Code Generator for CS 143
 
 This code generated assembly code for the COOL program that has been gathered into a syntax tree as explained in the semantic analyzer. The generated code can then be run on a MIPS simulator called SPIM.
 
-The organization of this file can be most easily seen my looking at the code() function, where we will see that the code generation is separated into several stages:
+The organization of the cgen.cc file can be most easily seen my looking at the code() function, where we will see that the code generation is separated into several stages:
   code_global_data - emit names and definitions that will be should be globally visible, such as class tables and method dispatch tables.
   code_select_gc - emit code that will specify settings for the garbage collection feature
   
@@ -29,3 +29,5 @@ The organization of this file can be most easily seen my looking at the code() f
   code_methods - emit code for methods
   
   Once all of this code is emitted, the MIPS simulator can use it to run the program.
+  
+  cool-tree.h helps define getter functions which are useful for obtaining information about variables of the current Expression object. Information such as variable name and values are gathered into a map representing the current scope of variable names. 
